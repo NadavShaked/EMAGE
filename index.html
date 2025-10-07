@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="EMAGE: Towards Unified Holistic Co-Speech Gesture Generation via Expressive Masked Audio Gesture Modeling">
+  <meta name="keywords" content="EMAGE, Co-Speech Gesture Generation, Animation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMAGE</title>
+
+  <style>
+  .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
+  </style>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./assets/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./assets/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <!-- custom css file  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/twentytwenty.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <link rel="icon" href="./assets/pac_man.svg">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop head">
+      <div class="columns is-centered">
+        <div class="column has-text-centered head">
+<!--          <div class="logo">-->
+<!--          <a href="index.html">-->
+<!--            &lt;!&ndash; <img src="./assets/images/propainter_logo1" width=200px alt="Logo"> &ndash;&gt;-->
+<!--            <img src="./assets/images/propainter_logo1" onmouseover="this.src='./assets/images/propainter_logo2';" onmouseout="this.src='./assets/images/propainter_logo1';">-->
+<!--          </a>-->
+<!--          </div>-->
+          <br>
+
+          <h1 class="title is-2 publication-title">
+            EMAGE: Towards Unified Holistic Co-Speech Gesture Generation via Expressive Masked Audio Gesture Modeling
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://h-liu1997.github.io/" target="_blank">Haiyang Liu</a><sup>1*</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://zzhat0706.github.io/PersonalPage/" target="_blank">Zihao Zhu</a><sup>2*</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://ps.is.mpg.de/person/gbecherini" target="_blank">Giorgio Becherini</a><sup>3</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=9sWVrREAAAAJ&hl=en" target="_blank">Yichen Peng</a><sup>4</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://pantomatrix.github.io/EMAGE/" target="_blank">Mingyang Su</a><sup>5</sup>,&nbsp;
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://pantomatrix.github.io/EMAGE/" target="_blank">You Zhou</a>,&nbsp;
+            </span>
+            
+            <span class="author-block">
+              <a href="https://scholars.cityu.edu.hk/en/persons/xuefei-zhe(2af95965-1271-463e-9dcd-8ba9a3a324a4)/publications.html" target="_blank">Xuefei Zhe</a>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://pantomatrix.github.io/EMAGE/" target="_blank">Naoya Iwamoto</a>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://pantomatrix.github.io/EMAGE/" target="_blank">Bo Zheng</a>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://ps.is.mpg.de/person/black" target="_blank">Michael J. Black</a><sup>3</sup>&nbsp;
+            </span>
+
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <span class="author-block">(<sup>*</sup>Equal Contribution)</span>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The University of Tokyo</span>,
+            <span class="author-block"><sup>2</sup>Keio University</span>,
+            <span class="author-block"><sup>4</sup>Japan Advanced Institute of Science and Technology</span>,
+            <br>
+            <span class="author-block"><sup>3</sup>Max Planck Institute for Intelligent Systems</span>,
+            <span class="author-block"><sup>5</sup>Tsinghua University</span>
+          </div>
+
+          <!-- <br>
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">NeurIPS 2023 (Dataset and Benchmark Track)</span>
+          </div> -->
+       
+          <br>
+          <div class="column is-centered has-text-centered">
+            <img style="width: 80%;" src="./assets/video_t.gif">
+          </div>
+          <br>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="https://colab.research.google.com/drive/1AINafluW6Ba5-KYN_L43eyFK0zRklMvr?usp=sharing" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span>♾️&nbsp;Colab</span>
+                </a>
+              </span>
+
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/H-Liu1997/EMAGE/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span>🤗&nbsp;Gradio</span>
+                </a>
+              </span>
+
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2401.00374" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/T0OYPvViFGE" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+
+              <!-- Data Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/H-Liu1997/BEAT2" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/PantoMatrix/PantoMatrix/blob/main/train_emage_audio.py" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Blender Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/H-Liu1997/BEAT2_Tools/blob/main/smplx_blender_addon_20230921.zip" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-tools"></i>
+                  </span>
+                  <span>Blender Add-On</span>
+                  </a>
+              </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video -->
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/T0OYPvViFGE?si=953-RLxBZRpoG-ek"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+          <h2 class="title is-3">Holistic Dataset</h2>
+      </div>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>1-Wayne</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="1b" src="./assets/body_vid/1b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>2-Scott</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="2b" src="./assets/body_vid/2b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>3-Solomon</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="3b" src="./assets/body_vid/3b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>4-Lawrence</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="4b" src="./assets/body_vid/4b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>5-Stewart</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="5b" src="./assets/body_vid/5b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>11-Nidal</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="11b" src="./assets/body_vid/11b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>12-Zhao</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="12b" src="./assets/body_vid/12b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>13-Lu</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="13b" src="./assets/body_vid/13b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>15-Carlos</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="15b" src="./assets/body_vid/15b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>16-Jorge</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="16b" src="./assets/body_vid/16b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>17-Itoi</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="17b" src="./assets/body_vid/17b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>18-Daiki</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="18b" src="./assets/body_vid/18b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>20-Li</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="20b" src="./assets/body_vid/20b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+<!-- Holistic Female Start -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+    <!-- <div class="column is-full">
+        <h2 class="title is-3">Holistic（Female）</h2>
+    </div> -->
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>6-Carla</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="6b" src="./assets/body_vid/6b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>7-Sophie</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="7b" src="./assets/body_vid/7b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>9-Miranda</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="9b" src="./assets/body_vid/9b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>10-Kieks</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="10b" src="./assets/body_vid/10b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>21-Ayana</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="21b" src="./assets/body_vid/21b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>22-Luqi</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="22b" src="./assets/body_vid/22b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>23-Hailing</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="23b" src="./assets/body_vid/23b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>24-Kexin</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="24b" src="./assets/body_vid/24b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>25-Goto</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="25b" src="./assets/body_vid/25b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>27-Yingqing</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="27b" src="./assets/body_vid/27b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>28-Tiffnay</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="28b" src="./assets/body_vid/28b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>30-Katya</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="30b" src="./assets/body_vid/30b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+<!-- Holistic Female End -->
+
+<!-- Face Male Start -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+          <h2 class="title is-3">Face Zoom In</h2>
+      </div>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>1-Wayne</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="1e" src="./assets/exp_vid/1e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>2-Scott</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="2e" src="./assets/exp_vid/2e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>3-Solomon</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="3e" src="./assets/exp_vid/3e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>4-Lawrence</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="4e" src="./assets/exp_vid/4e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>5-Stewart</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="5e" src="./assets/exp_vid/5e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>11-Nidal</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="11e" src="./assets/exp_vid/11e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>12-Zhao</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="12e" src="./assets/exp_vid/12e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>13-Lu</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="13e" src="./assets/exp_vid/13e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>15-Carlos</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="15e" src="./assets/exp_vid/15e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>16-Jorge</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="16e" src="./assets/exp_vid/16e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>17-Itoi</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="17e" src="./assets/exp_vid/17e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>18-Daiki</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="18e" src="./assets/exp_vid/18e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>20-Li</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="20e" src="./assets/exp_vid/20e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+<!-- Face Male End -->
+
+<!-- Face Female Start -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+    <!-- <div class="column is-full">
+        <h2 class="title is-3">Face Zoom In</h2>
+    </div> -->
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>6-Carla</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="6e" src="./assets/exp_vid/6e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>7-Sophie</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="7e" src="./assets/exp_vid/7e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>9-Miranda</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="9e" src="./assets/exp_vid/9e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>10-Kieks</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="10e" src="./assets/exp_vid/10e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>21-Ayana</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="21e" src="./assets/exp_vid/21e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>22-Luqi</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="22e" src="./assets/exp_vid/22e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>23-Hailing</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="23e" src="./assets/exp_vid/23e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>24-Kexin</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="24e" src="./assets/exp_vid/24e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>25-Goto</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="25e" src="./assets/exp_vid/25e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>27-Yingqing</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="27e" src="./assets/exp_vid/27e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>28-Tiffnay</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="28e" src="./assets/exp_vid/28e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>30-Katya</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="30e" src="./assets/exp_vid/30e.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+<!-- Face Female End -->
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+          <h2 class="title is-3">Generated Results</h2>
+      </div>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>Sequence-1</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="1r" src="./assets/res/001_V3.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>Sequence-2</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="2r" src="./assets/res/001_V4.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>Sequence-3</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="3r" src="./assets/res/001_V6.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>Sequence-4</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="4r" src="./assets/res/001_V5.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>Sequence-5</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="5r" src="./assets/body_vid/5b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>Sequence-6</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="6r" src="./assets/res/06_r.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div> -->
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full">
+          <h2 class="title is-3">Generated Results</h2>
+      </div> -->
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>Sequence-5</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="5r" src="./assets/res/001_V7.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>Sequence-6</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="6r" src="./assets/res/001_V8.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>Sequence-6</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="7r" src="./assets/res/001_V9.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>Sequence-8</b></div>
+          <div class="item">      
+            <div class="btn-video">
+              <video id="8r" src="./assets/res/001_V10.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>Sequence-5</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="5r" src="./assets/body_vid/5b.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div>
+        </div>
+        <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5556">
+          <div class="desc"><b>Sequence-6</b></div>
+          <div class="item">
+            <div class="btn-video">
+              <video id="6r" src="./assets/res/06_r.mp4" frameborder="0" autoplay muted playsinline loop allowfullscreen></video>
+            </div>
+          </div> -->
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+            <h2 class="title is-3">Foundation Models</h2>
+        </div>
+      </div> -->
+        <!-- <div class="column is-centered has-text-centered">
+          <img style="width: 100%;" src="./assets/emage_t.png">
+        </div>
+      </div>
+  </div>
+</section> --> 
+<!-- Abstract. -->
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Expressive human pose and shape estimation (EHPS) unifies body, hands, and
+            face motion capture with numerous applications. Despite encouraging progress,
+            current state-of-the-art methods still depend largely on confined training datasets.
+            In this work, we investigate scaling up EHPS towards the first generalist foundation
+            model (dubbed EMAGE), with up to ViT-Huge as the backbone and training
+            with up to 4.5M instances from diverse data sources. With big data and the large
+            model, EMAGE exhibits strong performance across diverse test benchmarks and
+            excellent transferability to even unseen environments. 1) For the data scaling, we
+            perform a systematic investigation on 32 EHPS datasets, encompassing a wide
+            range of scenarios that a model trained on any single dataset cannot handle. More
+            importantly, capitalizing on insights obtained from the extensive benchmarking
+            process, we optimize our training scheme and select datasets that lead to a significant
+            leap in EHPS capabilities. 2) For the model scaling, we take advantage of
+            vision transformers to study the scaling law of model sizes in EHPS. Moreover,
+            our finetuning strategy turn EMAGE into specialist models, allowing them to
+            achieve further performance boosts. Notably, our foundation model EMAGE
+            consistently delivers state-of-the-art results on seven benchmarks such as AGORA
+            (107.2 mm NMVE), UBody (57.4 mm PVE), EgoBody (63.6 mm PVE), and EHF
+            (62.3 mm PVE without finetuning).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+    <div class="column is-full">
+        <h2 class="title is-3">Demo Video</h2>
+    </div>
+    </div>
+  </div>
+</section> 
+
+<!-- Video -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <!-- <h2 class="title is-3">Video</h2> -->
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/T0OYPvViFGE?si=953-RLxBZRpoG-ek"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <div class="columns is-centered"><p>
+            <!-- This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">ProPainter</a>. -->
+          </p></div>
+        </div>
+      </div>
+    </div>
+
+<!--    =================Visitor==========================-->
+<!--    <div class="content has-text-centered" style="padding:0 0 0 0">-->
+<!--      <img src='https://api.infinitescript.com/badgen/count?name=sczhou/ProPainter&ltext=Visitors&color=3977dd' alt='visitors'>-->
+<!--    </div>-->
+
+  </div>
+</footer>
+
+  <!-- custom js file  -->
+  <script defer src="./assets/js/fontawesome.all.min.js"></script>
+  <script src="./assets/js/bulma-carousel.min.js"></script>
+  <script src="./assets/js/bulma-slider.min.js"></script>
+  <script src="./assets/js/index.js"></script>
+  <script src="./assets/js/jquery.event.move.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const vid1b = document.getElementById('1b');
+      const vid2b = document.getElementById('2b');
+      const vid3b = document.getElementById('3b');
+      const vid4b = document.getElementById('4b');
+      const vid5b = document.getElementById('5b');
+      const vid6b = document.getElementById('6b');
+      const vid7b = document.getElementById('7b');
+      const vid9b = document.getElementById('9b');
+      const vid10b = document.getElementById('10b');
+      const vid11b = document.getElementById('11b');
+      const vid12b = document.getElementById('12b');
+      const vid13b = document.getElementById('13b');
+      const vid15b = document.getElementById('15b');
+      const vid16b = document.getElementById('16b');
+      const vid17b = document.getElementById('17b');
+      const vid18b = document.getElementById('18b');
+      const vid20b = document.getElementById('20b');
+      const vid21b = document.getElementById('21b');
+      const vid22b = document.getElementById('22b');
+      const vid23b = document.getElementById('23b');
+      const vid24b = document.getElementById('24b');
+      const vid25b = document.getElementById('25b');
+      const vid27b = document.getElementById('27b');
+      const vid28b = document.getElementById('28b');
+      const vid30b = document.getElementById('30b');
+      const vid1e = document.getElementById('1e');
+      const vid2e = document.getElementById('2e');
+      const vid3e = document.getElementById('3e');
+      const vid4e = document.getElementById('4e');
+      const vid5e = document.getElementById('5e');
+      const vid6e = document.getElementById('6e');
+      const vid7e = document.getElementById('7e');
+      const vid9e = document.getElementById('9e');
+      const vid10e = document.getElementById('10e');
+      const vid11e = document.getElementById('11e');
+      const vid12e = document.getElementById('12e');
+      const vid13e = document.getElementById('13e');
+      const vid15e = document.getElementById('15e');
+      const vid16e = document.getElementById('16e');
+      const vid17e = document.getElementById('17e');
+      const vid18e = document.getElementById('18e');
+      const vid20e = document.getElementById('20e');
+      const vid21e = document.getElementById('21e');
+      const vid22e = document.getElementById('22e');
+      const vid23e = document.getElementById('23e');
+      const vid24e = document.getElementById('24e');
+      const vid25e = document.getElementById('25e');
+      const vid27e = document.getElementById('27e');
+      const vid28e = document.getElementById('28e');
+      const vid30e = document.getElementById('30e');
+      const vid1r = document.getElementById('1r');
+      const vid2r = document.getElementById('2r');
+      const vid3r = document.getElementById('3r');
+      const vid4r = document.getElementById('4r');
+      const vid5r = document.getElementById('5r');
+      const vid6r = document.getElementById('6r');
+      const vid7r = document.getElementById('7r');
+      const vid8r = document.getElementById('8r');
+      // クリックで音声をトグル
+      vid1b.addEventListener('click', function() {
+        toggleAudio(vid1b);
+      });
+      vid2b.addEventListener('click', function() {
+        toggleAudio(vid2b);
+      });
+      vid3b.addEventListener('click', function() {
+        toggleAudio(vid3b);
+      });
+      vid4b.addEventListener('click', function() {
+        toggleAudio(vid4b);
+      });
+      vid5b.addEventListener('click', function() {
+        toggleAudio(vid5b);
+      });
+      vid6b.addEventListener('click', function() {
+        toggleAudio(vid6b);
+      });
+      vid7b.addEventListener('click', function() {
+        toggleAudio(vid7b);
+      });
+      vid9b.addEventListener('click', function() {
+        toggleAudio(vid9b);
+      });
+      vid10b.addEventListener('click', function() {
+        toggleAudio(vid10b);
+      });
+      vid11b.addEventListener('click', function() {
+        toggleAudio(vid11b);
+      });
+      vid12b.addEventListener('click', function() {
+        toggleAudio(vid12b);
+      });
+      vid13b.addEventListener('click', function() {
+        toggleAudio(vid13b);
+      });
+      vid15b.addEventListener('click', function() {
+        toggleAudio(vid15b);
+      });
+      vid16b.addEventListener('click', function() {
+        toggleAudio(vid16b);
+      });
+      vid17b.addEventListener('click', function() {
+        toggleAudio(vid17b);
+      });
+      vid18b.addEventListener('click', function() {
+        toggleAudio(vid18b);
+      });
+      vid20b.addEventListener('click', function() {
+        toggleAudio(vid20b);
+      });
+      vid21b.addEventListener('click', function() {
+        toggleAudio(vid21b);
+      });
+      vid22b.addEventListener('click', function() {
+        toggleAudio(vid22b);
+      });
+      vid23b.addEventListener('click', function() {
+        toggleAudio(vid23b);
+      });
+      vid24b.addEventListener('click', function() {
+        toggleAudio(vid24b);
+      });
+      vid25b.addEventListener('click', function() {
+        toggleAudio(vid25b);
+      });
+      vid27b.addEventListener('click', function() {
+        toggleAudio(vid27b);
+      });
+      vid28b.addEventListener('click', function() {
+        toggleAudio(vid28b);
+      });
+      vid30b.addEventListener('click', function() {
+        toggleAudio(vid30b);
+      });
+      vid1e.addEventListener('click', function() {
+        toggleAudio(vid1e);
+      });
+      vid2e.addEventListener('click', function() {
+        toggleAudio(vid2e);
+      });
+      vid3e.addEventListener('click', function() {
+        toggleAudio(vid3e);
+      });
+      vid4e.addEventListener('click', function() {
+        toggleAudio(vid4e);
+      });
+      vid5e.addEventListener('click', function() {
+        toggleAudio(vid5e);
+      });
+      vid6e.addEventListener('click', function() {
+        toggleAudio(vid6e);
+      });
+      vid7e.addEventListener('click', function() {
+        toggleAudio(vid7e);
+      });
+      vid9e.addEventListener('click', function() {
+        toggleAudio(vid9e);
+      });
+      vid10e.addEventListener('click', function() {
+        toggleAudio(vid10e);
+      });
+      vid11e.addEventListener('click', function() {
+        toggleAudio(vid11e);
+      });
+      vid12e.addEventListener('click', function() {
+        toggleAudio(vid12e);
+      });
+      vid13e.addEventListener('click', function() {
+        toggleAudio(vid13e);
+      });
+      vid15e.addEventListener('click', function() {
+        toggleAudio(vid15e);
+      });
+      vid16e.addEventListener('click', function() {
+        toggleAudio(vid16e);
+      });
+      vid17e.addEventListener('click', function() {
+        toggleAudio(vid17e);
+      });
+      vid18e.addEventListener('click', function() {
+        toggleAudio(vid18e);
+      });
+      vid20e.addEventListener('click', function() {
+        toggleAudio(vid20e);
+      });
+      vid21e.addEventListener('click', function() {
+        toggleAudio(vid21e);
+      });
+      vid22e.addEventListener('click', function() {
+        toggleAudio(vid22e);
+      });
+      vid23e.addEventListener('click', function() {
+        toggleAudio(vid23e);
+      });
+      vid24e.addEventListener('click', function() {
+        toggleAudio(vid24e);
+      });
+      vid25e.addEventListener('click', function() {
+        toggleAudio(vid25e);
+      });
+      vid27e.addEventListener('click', function() {
+        toggleAudio(vid27e);
+      });
+      vid28e.addEventListener('click', function() {
+        toggleAudio(vid28e);
+      });
+      vid30e.addEventListener('click', function() {
+        toggleAudio(vid30e);
+      });
+      vid1r.addEventListener('click', function() {
+        toggleAudio(vid1r);
+      });
+      vid2r.addEventListener('click', function() {
+        toggleAudio(vid2r);
+      });
+      vid3r.addEventListener('click', function() {
+        toggleAudio(vid3r);
+      });
+      vid4r.addEventListener('click', function() {
+        toggleAudio(vid4r);
+      });
+      vid5r.addEventListener('click', function() {
+        toggleAudio(vid5r);
+      });
+      vid6r.addEventListener('click', function() {
+        toggleAudio(vid6r);
+      });
+      vid7r.addEventListener('click', function() {
+        toggleAudio(vid7r);
+      });
+      vid8r.addEventListener('click', function() {
+        toggleAudio(vid8r);
+      });
+    });
+  
+    function toggleAudio(video) {
+      if (video.muted) {
+        // 無音だった場合、音声を有効化
+        video.muted = false;
+      } else {
+        // 音声が有効だった場合、無音にする
+        video.muted = true;
+      }
+    }
+  </script>
+</body>
+</html>
